@@ -1,0 +1,21 @@
+from pyspark.sql.types import StructType, StructField, StringType, DoubleType
+
+# Define the schema of the data set
+schema = StructType([
+    StructField("productID", StringType(), True),
+    StructField("Price", DoubleType(), True),
+    StructField("City", StringType(), True),
+    StructField("Discount", DoubleType(), True)
+])
+
+# Create the data set
+data = [("A1", 100.0, "New York", 0.1),
+        ("B2", 200.0, "Los Angeles", 0.2),
+        ("C3", 300.0, "Chicago", 0.3),
+        ("D4", 400.0, "Houston", 0.4),
+        ("E5", 500.0, "Philadelphia", 0.5)]
+
+df = spark.createDataFrame(data, schema=schema)
+
+# Show the data set
+df.show()
