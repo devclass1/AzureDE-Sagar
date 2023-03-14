@@ -18,3 +18,14 @@ data_frame.sample(0.4,26).collect()
 # Again extract random sample through sample function using seed and
 # fraction as arguments to check if we get same output each time
 data_frame.sample(0.4,26).collect()
+
+
+##################
+Notes
+#################
+
+In PySpark, the sample method is used to generate a random sample of data from a DataFrame. The method takes two arguments: the first argument is the fraction of the DataFrame that should be sampled, and the second argument is the seed used to initialize the random number generator.
+
+The seed value is used to ensure that the random sample generated is reproducible. In other words, if you use the same seed value, you will get the same random sample every time you run the code. This can be useful for debugging and testing purposes.
+
+In the given example, sample(0.4, 26) means that 40% of the DataFrame will be randomly selected using a seed value of 26. The collect method is then used to retrieve the sampled data as a list in the driver program, just as in the previous example.
