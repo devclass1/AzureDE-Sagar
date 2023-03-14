@@ -18,3 +18,10 @@ data_frame.sample(0.4).collect()
 # Again extract random sample through sample function using only
 # fraction as argument to check if we get same output each time
 data_frame.sample(0.4).collect()
+
+###################################
+Notes
+####################################
+In PySpark, the sample method is used to generate a random sample of data from a DataFrame. The method takes one argument, which is the fraction of the DataFrame that should be sampled. In the example given, sample(0.4) means that 40% of the DataFrame will be randomly selected.
+
+The collect method is then used to retrieve the sampled data as a list in the driver program. The collect method is an action that triggers the computation of the DataFrame and returns the result to the driver program.
